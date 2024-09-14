@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StreakTableViewViewCell: UICollectionViewCell {
+class StreakCollectionViewViewCell: UICollectionViewCell {
     
     static let identifier = "StreakCollectionViewCell"
     

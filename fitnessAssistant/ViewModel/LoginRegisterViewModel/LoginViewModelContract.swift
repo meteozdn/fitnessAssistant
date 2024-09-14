@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+protocol LoginViewModelProtocol{
+    var delegate: LoginViewModelDelegate? {get set}
+    func login()
+    
+}
+
+
+protocol LoginViewModelDelegate{
+    func handle(_ output: String)
+}

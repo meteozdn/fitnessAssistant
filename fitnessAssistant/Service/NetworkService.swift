@@ -25,19 +25,23 @@ enum HttpMethods: String {
 
 enum Endpoint{
     case users
+    case exercises
 }
 
 extension Endpoint: EndpointProtocol{
+    
   
 
     var baseURL: String {
-        return "https://oguzhanatlan.online/api/"
+        return "https://oguzhanatlan.online/api/api.php"
     }
     
     var tableURL: String {
         switch self {
         case .users:
-            return "users.php"
+            return "&table=users"
+        case .exercises:
+            return "&table=exercises"
         }
     }
     
@@ -49,15 +53,18 @@ extension Endpoint: EndpointProtocol{
         switch self {
         case .users:
             return .get
+        case .exercises:
+            return .get
 
         }
     }
     
     func fitnessAppURL() -> String {
-        return "\(baseURL)\(tableURL)\(apiKey)"
+        return "\(baseURL)\(apiKey)\(tableURL)"
     }
     
     func request() -> URLRequest {
+        
         guard let apiUrl = URLComponents(string: fitnessAppURL())
         else {fatalError("URL COMPONENT OLUŞTURULAMADI") }
         
@@ -68,5 +75,4 @@ extension Endpoint: EndpointProtocol{
     }
 
 }
-
 

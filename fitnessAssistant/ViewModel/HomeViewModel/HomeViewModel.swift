@@ -16,7 +16,7 @@ class HomeViewModel: HomeViewModelProtocol{
     }
     
     func load() {
-        service.fetchData(.users) { (result: Result<UserModel, Error>) in
+        service.fetchData(.exercises) { (result: Result<ExerciseModel, Error>) in
             switch result{
             case.success:
                print("success")

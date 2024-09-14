@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+
+class LoginViewModel: LoginViewModelProtocol{
+    var delegate: LoginViewModelDelegate?
+    let service: NetworkServiceProtocol
+    
+    init(service: NetworkServiceProtocol) {
+        self.service = service
+    }
+    
+    func login() {
+        service
+    }
+    
+}

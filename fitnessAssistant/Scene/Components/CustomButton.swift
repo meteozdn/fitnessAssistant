@@ -9,12 +9,34 @@ import UIKit
 
 class CustomButton: UIButton {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    enum FontSize {
+        case small
+        case medium
+        case big
     }
-    */
+    
+    init(title: String, hasBackground: Bool = false, fontSize: FontSize ) {
+        super.init(frame: .zero)
+        self.setTitle(title, for: .normal)
+        self.layer.cornerRadius = 12
+        self.backgroundColor =  hasBackground ? K.ColorConst.red : .clear
+        let titleColor = hasBackground ? .white : K.ColorConst.red
+        self.setTitleColor(titleColor, for: .normal)
+        
+        switch fontSize {
+        case .big:
+            self.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        case .medium:
+            self.titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
+        case .small:
+            self.titleLabel?.font = .systemFont(ofSize: 14)
+ 
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 
 }

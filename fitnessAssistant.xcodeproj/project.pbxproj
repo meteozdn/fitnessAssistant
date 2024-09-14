@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E1BC9802C959680001730E8 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1BC97F2C959680001730E8 /* CustomTextField.swift */; };
+		6E1BC9822C959E70001730E8 /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1BC9812C959E70001730E8 /* AuthHeaderView.swift */; };
+		6E1BC9842C95AF04001730E8 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1BC9832C95AF04001730E8 /* CustomButton.swift */; };
+		6E1BC9862C95C235001730E8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1BC9852C95C235001730E8 /* RegisterViewController.swift */; };
 		6E6AD6FE2C906C4C005C06ED /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6E6AD6FD2C906C4C005C06ED /* Lottie */; };
-		6E6AD7052C90880D005C06ED /* streakAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 6E6AD7042C90880D005C06ED /* streakAnimation.json */; };
 		6E6AD7072C90885E005C06ED /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6AD7062C90885E005C06ED /* NetworkService.swift */; };
 		6E6AD7092C9089AA005C06ED /* NetworkCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6AD7082C9089AA005C06ED /* NetworkCaller.swift */; };
 		6E6AD70B2C908BC0005C06ED /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6AD70A2C908BC0005C06ED /* UserModel.swift */; };
 		6E6AD70E2C909FD7005C06ED /* HomeViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6AD70D2C909FD7005C06ED /* HomeViewModelContract.swift */; };
 		6E6AD7102C909FF4005C06ED /* HomeViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6AD70F2C909FF4005C06ED /* HomeViewModelBuilder.swift */; };
 		6E6AD7122C90A001005C06ED /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6AD7112C90A001005C06ED /* HomeViewModel.swift */; };
+		6E6AD7172C9193FE005C06ED /* streakAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 6E6AD7162C9193FE005C06ED /* streakAnimation.json */; };
+		6E6AD71B2C91BB67005C06ED /* StreakCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6AD71A2C91BB67005C06ED /* StreakCollectionViewCell.swift */; };
+		6E6AD71E2C923DE3005C06ED /* ReadyCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6AD71D2C923DE3005C06ED /* ReadyCategoryCollectionViewCell.swift */; };
 		6E72F0702C6F5BC400CA9B04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E72F06F2C6F5BC400CA9B04 /* AppDelegate.swift */; };
 		6E72F0742C6F5BC400CA9B04 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E72F0732C6F5BC400CA9B04 /* InitViewController.swift */; };
 		6E72F0792C6F5BC700CA9B04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E72F0782C6F5BC700CA9B04 /* Assets.xcassets */; };
@@ -27,7 +33,7 @@
 		6E7439B32C8DE942006D25E8 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7439B22C8DE942006D25E8 /* CGFloat+Extensions.swift */; };
 		6E7439B62C8F05EE006D25E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7439B52C8F05EE006D25E8 /* LoginViewController.swift */; };
 		6E7439BA2C8F0DB4006D25E8 /* shadow+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7439B92C8F0DB4006D25E8 /* shadow+UIView.swift */; };
-		6E7439BD2C8F1407006D25E8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7439BC2C8F1407006D25E8 /* HomeViewController.swift */; };
+		6E7439BD2C8F1407006D25E8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7439BC2C8F1407006D25E8 /* HomeView.swift */; };
 		6E7439C32C8F1693006D25E8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7439C22C8F1693006D25E8 /* MainViewController.swift */; };
 		6E7439C82C8F1759006D25E8 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7439C72C8F1759006D25E8 /* ActivityViewController.swift */; };
 		6E7439CA2C8F1765006D25E8 /* TrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7439C92C8F1765006D25E8 /* TrainingViewController.swift */; };
@@ -35,6 +41,9 @@
 		6E7439CF2C8F28B6006D25E8 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 6E7439CE2C8F28B6006D25E8 /* DGCharts */; };
 		6E7439D12C8F3DB5006D25E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7439D02C8F3DB5006D25E8 /* Constants.swift */; };
 		6E7439D42C9048E9006D25E8 /* ImageButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7439D32C9048E9006D25E8 /* ImageButtonComponent.swift */; };
+		6EDC20B02C963859006262A5 /* LoginViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDC20AF2C963859006262A5 /* LoginViewModelContract.swift */; };
+		6EDC20B22C963867006262A5 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDC20B12C963867006262A5 /* LoginViewModel.swift */; };
+		6EF333CC2C94547D004A7296 /* MuscleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF333CB2C94547D004A7296 /* MuscleDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,35 +64,44 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6E6AD7042C90880D005C06ED /* streakAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = streakAnimation.json; sourceTree = "<group>"; };
+		6E1BC97F2C959680001730E8 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		6E1BC9812C959E70001730E8 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
+		6E1BC9832C95AF04001730E8 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		6E1BC9852C95C235001730E8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		6E6AD7062C90885E005C06ED /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		6E6AD7082C9089AA005C06ED /* NetworkCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCaller.swift; sourceTree = "<group>"; };
 		6E6AD70A2C908BC0005C06ED /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		6E6AD70D2C909FD7005C06ED /* HomeViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelContract.swift; sourceTree = "<group>"; };
 		6E6AD70F2C909FF4005C06ED /* HomeViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelBuilder.swift; sourceTree = "<group>"; };
 		6E6AD7112C90A001005C06ED /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		6E72F06C2C6F5BC400CA9B04 /* moviesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moviesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E6AD7162C9193FE005C06ED /* streakAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = streakAnimation.json; sourceTree = "<group>"; };
+		6E6AD71A2C91BB67005C06ED /* StreakCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakCollectionViewCell.swift; sourceTree = "<group>"; };
+		6E6AD71D2C923DE3005C06ED /* ReadyCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		6E72F06C2C6F5BC400CA9B04 /* fitnessAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fitnessAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E72F06F2C6F5BC400CA9B04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E72F0732C6F5BC400CA9B04 /* InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
 		6E72F0782C6F5BC700CA9B04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E72F07B2C6F5BC700CA9B04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E72F07D2C6F5BC700CA9B04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6E72F0822C6F5BC700CA9B04 /* moviesAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = moviesAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E72F0822C6F5BC700CA9B04 /* fitnessAssistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fitnessAssistantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E72F0862C6F5BC700CA9B04 /* moviesAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moviesAppTests.swift; sourceTree = "<group>"; };
-		6E72F08C2C6F5BC700CA9B04 /* moviesAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = moviesAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E72F08C2C6F5BC700CA9B04 /* fitnessAssistantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fitnessAssistantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E72F0902C6F5BC700CA9B04 /* moviesAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moviesAppUITests.swift; sourceTree = "<group>"; };
 		6E72F0922C6F5BC700CA9B04 /* moviesAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moviesAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6E7439B02C8DDF94006D25E8 /* OnBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardViewController.swift; sourceTree = "<group>"; };
 		6E7439B22C8DE942006D25E8 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		6E7439B52C8F05EE006D25E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6E7439B92C8F0DB4006D25E8 /* shadow+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "shadow+UIView.swift"; sourceTree = "<group>"; };
-		6E7439BC2C8F1407006D25E8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6E7439BC2C8F1407006D25E8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		6E7439C22C8F1693006D25E8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6E7439C72C8F1759006D25E8 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		6E7439C92C8F1765006D25E8 /* TrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViewController.swift; sourceTree = "<group>"; };
 		6E7439CB2C8F1772006D25E8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6E7439D02C8F3DB5006D25E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6E7439D32C9048E9006D25E8 /* ImageButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButtonComponent.swift; sourceTree = "<group>"; };
+		6EDC20AF2C963859006262A5 /* LoginViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelContract.swift; sourceTree = "<group>"; };
+		6EDC20B12C963867006262A5 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		6EF333CB2C94547D004A7296 /* MuscleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,28 +132,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E1BC97D2C959628001730E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6E1BC9812C959E70001730E8 /* AuthHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6E1BC97E2C959648001730E8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				6E1BC97F2C959680001730E8 /* CustomTextField.swift */,
+				6E7439D32C9048E9006D25E8 /* ImageButtonComponent.swift */,
+				6E1BC9832C95AF04001730E8 /* CustomButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		6E6AD6FF2C906CFD005C06ED /* Animations */ = {
 			isa = PBXGroup;
 			children = (
-				6E6AD7042C90880D005C06ED /* streakAnimation.json */,
+				6E6AD7162C9193FE005C06ED /* streakAnimation.json */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
 		};
-		6E6AD70C2C909FA5005C06ED /* HomeModelView */ = {
+		6E6AD70C2C909FA5005C06ED /* HomeViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				6E6AD70D2C909FD7005C06ED /* HomeViewModelContract.swift */,
 				6E6AD70F2C909FF4005C06ED /* HomeViewModelBuilder.swift */,
 				6E6AD7112C90A001005C06ED /* HomeViewModel.swift */,
 			);
-			path = HomeModelView;
+			path = HomeViewModel;
+			sourceTree = "<group>";
+		};
+		6E6AD7182C91B496005C06ED /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6EDC20AE2C96382A006262A5 /* LoginRegisterViewModel */,
+				6E6AD70C2C909FA5005C06ED /* HomeViewModel */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6E6AD7192C91BB4A005C06ED /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6E6AD71A2C91BB67005C06ED /* StreakCollectionViewCell.swift */,
+				6E6AD71D2C923DE3005C06ED /* ReadyCategoryCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		6E6AD71C2C91BB95005C06ED /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				6E7439D02C8F3DB5006D25E8 /* Constants.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		6E72F0632C6F5BC400CA9B04 = {
 			isa = PBXGroup;
 			children = (
-				6E72F06E2C6F5BC400CA9B04 /* moviesApp */,
+				6E72F06E2C6F5BC400CA9B04 /* fitnessAssistant */,
 				6E72F0852C6F5BC700CA9B04 /* moviesAppTests */,
 				6E72F08F2C6F5BC700CA9B04 /* moviesAppUITests */,
 				6E72F06D2C6F5BC400CA9B04 /* Products */,
@@ -145,17 +207,20 @@
 		6E72F06D2C6F5BC400CA9B04 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6E72F06C2C6F5BC400CA9B04 /* moviesApp.app */,
-				6E72F0822C6F5BC700CA9B04 /* moviesAppTests.xctest */,
-				6E72F08C2C6F5BC700CA9B04 /* moviesAppUITests.xctest */,
+				6E72F06C2C6F5BC400CA9B04 /* fitnessAssistant.app */,
+				6E72F0822C6F5BC700CA9B04 /* fitnessAssistantTests.xctest */,
+				6E72F08C2C6F5BC700CA9B04 /* fitnessAssistantUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6E72F06E2C6F5BC400CA9B04 /* moviesApp */ = {
+		6E72F06E2C6F5BC400CA9B04 /* fitnessAssistant */ = {
 			isa = PBXGroup;
 			children = (
-				6E7439AB2C8DDD3A006D25E8 /* Models */,
+				6E6AD6FF2C906CFD005C06ED /* Animations */,
+				6E6AD71C2C91BB95005C06ED /* Core */,
+				6E6AD7192C91BB4A005C06ED /* Cells */,
+				6E6AD7182C91B496005C06ED /* ViewModel */,
 				6E7439A92C8DDCE2006D25E8 /* Scene */,
 				6E7439AC2C8DDD47006D25E8 /* Service */,
 				6E7439AD2C8DDD4D006D25E8 /* Manager */,
@@ -165,9 +230,8 @@
 				6E72F0782C6F5BC700CA9B04 /* Assets.xcassets */,
 				6E72F07A2C6F5BC700CA9B04 /* LaunchScreen.storyboard */,
 				6E72F07D2C6F5BC700CA9B04 /* Info.plist */,
-				6E7439D02C8F3DB5006D25E8 /* Constants.swift */,
 			);
-			path = moviesApp;
+			path = fitnessAssistant;
 			sourceTree = "<group>";
 		};
 		6E72F0852C6F5BC700CA9B04 /* moviesAppTests */ = {
@@ -198,7 +262,8 @@
 		6E7439A92C8DDCE2006D25E8 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				6E6AD6FF2C906CFD005C06ED /* Animations */,
+				6E1BC97E2C959648001730E8 /* Components */,
+				6E1BC97D2C959628001730E8 /* Views */,
 				6E72F0732C6F5BC400CA9B04 /* InitViewController.swift */,
 				6E7439BF2C8F159D006D25E8 /* MainView */,
 				6E7439B42C8E584D006D25E8 /* LoginRegisterVC */,
@@ -214,13 +279,6 @@
 				6E7439B92C8F0DB4006D25E8 /* shadow+UIView.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		6E7439AB2C8DDD3A006D25E8 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		6E7439AC2C8DDD47006D25E8 /* Service */ = {
@@ -259,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				6E7439B52C8F05EE006D25E8 /* LoginViewController.swift */,
+				6E1BC9852C95C235001730E8 /* RegisterViewController.swift */,
 			);
 			path = LoginRegisterVC;
 			sourceTree = "<group>";
@@ -266,9 +325,8 @@
 		6E7439BB2C8F13DE006D25E8 /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
-				6E6AD70C2C909FA5005C06ED /* HomeModelView */,
-				6E7439D22C9048D3006D25E8 /* Components */,
-				6E7439BC2C8F1407006D25E8 /* HomeViewController.swift */,
+				6E7439BC2C8F1407006D25E8 /* HomeView.swift */,
+				6EF333CB2C94547D004A7296 /* MuscleDetailViewController.swift */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -309,20 +367,21 @@
 			path = ActivityViewController;
 			sourceTree = "<group>";
 		};
-		6E7439D22C9048D3006D25E8 /* Components */ = {
+		6EDC20AE2C96382A006262A5 /* LoginRegisterViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				6E7439D32C9048E9006D25E8 /* ImageButtonComponent.swift */,
+				6EDC20AF2C963859006262A5 /* LoginViewModelContract.swift */,
+				6EDC20B12C963867006262A5 /* LoginViewModel.swift */,
 			);
-			path = Components;
+			path = LoginRegisterViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6E72F06B2C6F5BC400CA9B04 /* moviesApp */ = {
+		6E72F06B2C6F5BC400CA9B04 /* fitnessAssistant */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6E72F0962C6F5BC700CA9B04 /* Build configuration list for PBXNativeTarget "moviesApp" */;
+			buildConfigurationList = 6E72F0962C6F5BC700CA9B04 /* Build configuration list for PBXNativeTarget "fitnessAssistant" */;
 			buildPhases = (
 				6E72F0682C6F5BC400CA9B04 /* Sources */,
 				6E72F0692C6F5BC400CA9B04 /* Frameworks */,
@@ -332,19 +391,19 @@
 			);
 			dependencies = (
 			);
-			name = moviesApp;
+			name = fitnessAssistant;
 			packageProductDependencies = (
 				6E7439A62C8DB9CF006D25E8 /* SnapKit */,
 				6E7439CE2C8F28B6006D25E8 /* DGCharts */,
 				6E6AD6FD2C906C4C005C06ED /* Lottie */,
 			);
 			productName = moviesApp;
-			productReference = 6E72F06C2C6F5BC400CA9B04 /* moviesApp.app */;
+			productReference = 6E72F06C2C6F5BC400CA9B04 /* fitnessAssistant.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6E72F0812C6F5BC700CA9B04 /* moviesAppTests */ = {
+		6E72F0812C6F5BC700CA9B04 /* fitnessAssistantTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6E72F0992C6F5BC700CA9B04 /* Build configuration list for PBXNativeTarget "moviesAppTests" */;
+			buildConfigurationList = 6E72F0992C6F5BC700CA9B04 /* Build configuration list for PBXNativeTarget "fitnessAssistantTests" */;
 			buildPhases = (
 				6E72F07E2C6F5BC700CA9B04 /* Sources */,
 				6E72F07F2C6F5BC700CA9B04 /* Frameworks */,
@@ -355,14 +414,14 @@
 			dependencies = (
 				6E72F0842C6F5BC700CA9B04 /* PBXTargetDependency */,
 			);
-			name = moviesAppTests;
+			name = fitnessAssistantTests;
 			productName = moviesAppTests;
-			productReference = 6E72F0822C6F5BC700CA9B04 /* moviesAppTests.xctest */;
+			productReference = 6E72F0822C6F5BC700CA9B04 /* fitnessAssistantTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		6E72F08B2C6F5BC700CA9B04 /* moviesAppUITests */ = {
+		6E72F08B2C6F5BC700CA9B04 /* fitnessAssistantUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6E72F09C2C6F5BC700CA9B04 /* Build configuration list for PBXNativeTarget "moviesAppUITests" */;
+			buildConfigurationList = 6E72F09C2C6F5BC700CA9B04 /* Build configuration list for PBXNativeTarget "fitnessAssistantUITests" */;
 			buildPhases = (
 				6E72F0882C6F5BC700CA9B04 /* Sources */,
 				6E72F0892C6F5BC700CA9B04 /* Frameworks */,
@@ -373,9 +432,9 @@
 			dependencies = (
 				6E72F08E2C6F5BC700CA9B04 /* PBXTargetDependency */,
 			);
-			name = moviesAppUITests;
+			name = fitnessAssistantUITests;
 			productName = moviesAppUITests;
-			productReference = 6E72F08C2C6F5BC700CA9B04 /* moviesAppUITests.xctest */;
+			productReference = 6E72F08C2C6F5BC700CA9B04 /* fitnessAssistantUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -401,7 +460,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6E72F0672C6F5BC400CA9B04 /* Build configuration list for PBXProject "moviesApp" */;
+			buildConfigurationList = 6E72F0672C6F5BC400CA9B04 /* Build configuration list for PBXProject "fitnessAssistant" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -419,9 +478,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6E72F06B2C6F5BC400CA9B04 /* moviesApp */,
-				6E72F0812C6F5BC700CA9B04 /* moviesAppTests */,
-				6E72F08B2C6F5BC700CA9B04 /* moviesAppUITests */,
+				6E72F06B2C6F5BC400CA9B04 /* fitnessAssistant */,
+				6E72F0812C6F5BC700CA9B04 /* fitnessAssistantTests */,
+				6E72F08B2C6F5BC700CA9B04 /* fitnessAssistantUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -433,7 +492,7 @@
 			files = (
 				6E72F0792C6F5BC700CA9B04 /* Assets.xcassets in Resources */,
 				6E72F07C2C6F5BC700CA9B04 /* Base in Resources */,
-				6E6AD7052C90880D005C06ED /* streakAnimation.json in Resources */,
+				6E6AD7172C9193FE005C06ED /* streakAnimation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,20 +521,29 @@
 				6E7439CA2C8F1765006D25E8 /* TrainingViewController.swift in Sources */,
 				6E72F0742C6F5BC400CA9B04 /* InitViewController.swift in Sources */,
 				6E7439B32C8DE942006D25E8 /* CGFloat+Extensions.swift in Sources */,
+				6E1BC9842C95AF04001730E8 /* CustomButton.swift in Sources */,
+				6E1BC9802C959680001730E8 /* CustomTextField.swift in Sources */,
+				6E6AD71B2C91BB67005C06ED /* StreakCollectionViewCell.swift in Sources */,
 				6E7439B12C8DDF94006D25E8 /* OnBoardViewController.swift in Sources */,
 				6E7439B62C8F05EE006D25E8 /* LoginViewController.swift in Sources */,
+				6E6AD71E2C923DE3005C06ED /* ReadyCategoryCollectionViewCell.swift in Sources */,
 				6E7439C82C8F1759006D25E8 /* ActivityViewController.swift in Sources */,
 				6E6AD7072C90885E005C06ED /* NetworkService.swift in Sources */,
 				6E6AD7102C909FF4005C06ED /* HomeViewModelBuilder.swift in Sources */,
 				6E7439CC2C8F1772006D25E8 /* ProfileViewController.swift in Sources */,
+				6EDC20B02C963859006262A5 /* LoginViewModelContract.swift in Sources */,
+				6E1BC9822C959E70001730E8 /* AuthHeaderView.swift in Sources */,
 				6E6AD70E2C909FD7005C06ED /* HomeViewModelContract.swift in Sources */,
 				6E7439BA2C8F0DB4006D25E8 /* shadow+UIView.swift in Sources */,
-				6E7439BD2C8F1407006D25E8 /* HomeViewController.swift in Sources */,
+				6E7439BD2C8F1407006D25E8 /* HomeView.swift in Sources */,
 				6E6AD70B2C908BC0005C06ED /* UserModel.swift in Sources */,
+				6EDC20B22C963867006262A5 /* LoginViewModel.swift in Sources */,
 				6E72F0702C6F5BC400CA9B04 /* AppDelegate.swift in Sources */,
 				6E7439C32C8F1693006D25E8 /* MainViewController.swift in Sources */,
 				6E6AD7092C9089AA005C06ED /* NetworkCaller.swift in Sources */,
 				6E7439D42C9048E9006D25E8 /* ImageButtonComponent.swift in Sources */,
+				6E1BC9862C95C235001730E8 /* RegisterViewController.swift in Sources */,
+				6EF333CC2C94547D004A7296 /* MuscleDetailViewController.swift in Sources */,
 				6E7439D12C8F3DB5006D25E8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,12 +570,12 @@
 /* Begin PBXTargetDependency section */
 		6E72F0842C6F5BC700CA9B04 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6E72F06B2C6F5BC400CA9B04 /* moviesApp */;
+			target = 6E72F06B2C6F5BC400CA9B04 /* fitnessAssistant */;
 			targetProxy = 6E72F0832C6F5BC700CA9B04 /* PBXContainerItemProxy */;
 		};
 		6E72F08E2C6F5BC700CA9B04 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6E72F06B2C6F5BC400CA9B04 /* moviesApp */;
+			target = 6E72F06B2C6F5BC400CA9B04 /* fitnessAssistant */;
 			targetProxy = 6E72F08D2C6F5BC700CA9B04 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -652,7 +720,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3VLQEKH826;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = moviesApp/Info.plist;
+				INFOPLIST_FILE = fitnessAssistant/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -662,7 +730,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xx.moviesApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.metehanozden.-fitnessAssistant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -679,7 +747,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3VLQEKH826;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = moviesApp/Info.plist;
+				INFOPLIST_FILE = fitnessAssistant/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -689,7 +757,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xx.moviesApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.metehanozden.-fitnessAssistant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -713,7 +781,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/moviesApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/moviesApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fitnessAssistant.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/fitnessAssistant";
 			};
 			name = Debug;
 		};
@@ -733,7 +801,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/moviesApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/moviesApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fitnessAssistant.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/fitnessAssistant";
 			};
 			name = Release;
 		};
@@ -776,7 +844,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6E72F0672C6F5BC400CA9B04 /* Build configuration list for PBXProject "moviesApp" */ = {
+		6E72F0672C6F5BC400CA9B04 /* Build configuration list for PBXProject "fitnessAssistant" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E72F0942C6F5BC700CA9B04 /* Debug */,
@@ -785,7 +853,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6E72F0962C6F5BC700CA9B04 /* Build configuration list for PBXNativeTarget "moviesApp" */ = {
+		6E72F0962C6F5BC700CA9B04 /* Build configuration list for PBXNativeTarget "fitnessAssistant" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E72F0972C6F5BC700CA9B04 /* Debug */,
@@ -794,7 +862,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6E72F0992C6F5BC700CA9B04 /* Build configuration list for PBXNativeTarget "moviesAppTests" */ = {
+		6E72F0992C6F5BC700CA9B04 /* Build configuration list for PBXNativeTarget "fitnessAssistantTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E72F09A2C6F5BC700CA9B04 /* Debug */,
@@ -803,7 +871,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6E72F09C2C6F5BC700CA9B04 /* Build configuration list for PBXNativeTarget "moviesAppUITests" */ = {
+		6E72F09C2C6F5BC700CA9B04 /* Build configuration list for PBXNativeTarget "fitnessAssistantUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E72F09D2C6F5BC700CA9B04 /* Debug */,
