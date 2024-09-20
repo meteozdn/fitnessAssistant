@@ -9,8 +9,7 @@ import Foundation
 
 protocol LoginViewModelProtocol{
     var delegate: LoginViewModelDelegate? {get set}
-    func login()
-    
+    func login(mail: String, password: String )
 }
 
 
