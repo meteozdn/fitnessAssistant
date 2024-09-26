@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReadyCategoryCollectionViewCell: UICollectionViewCell {
+class ReadyCategoryCollectionViewCell: UICollectionViewCell, SuperCell {
     
     static let identifier = "ReadyCategoryCollectionViewCell"
     
@@ -46,11 +46,39 @@ class ReadyCategoryCollectionViewCell: UICollectionViewCell {
         
     }
     
-    public func setupCell(title :String, image: String){
+    public func setupCell(title :String, image: String, hasDetail: Bool = false){
         DispatchQueue.main.async {
             self.label.text = title
             self.imageView.image = UIImage(named: image)
+            if hasDetail{
+                self.setDetails(time: "20dk", difficult: "ZOR")
+            }
         }
+    }
+    
+    private func setDetails(time: String, difficult: String){
+    
+        let timeLabel = UILabel()
+        let difficultLabel = UILabel()
+        
+        timeLabel.text = time
+        contentView.addSubview(timeLabel)
+        timeLabel.font = .systemFont(ofSize: 10, weight: .bold)
+        timeLabel.textColor = .white
+
+        timeLabel.snp.makeConstraints { make in
+            make.right.equalToSuperview().inset(10)
+            make.top.equalToSuperview().inset(10)
+        }
+        /*
+        difficultLabel.text = difficult
+        contentView.addSubview(difficultLabel)
+        difficultLabel.font = .systemFont(ofSize: 10, weight: .bold)
+        difficultLabel.textColor = .white
+        difficultLabel.snp.makeConstraints { make in
+            make.right.equalToSuperview().inset(10)
+            make.top.equalTo(difficultLabel.snp.bottom).offset(10)
+        }*/
         
     }
     

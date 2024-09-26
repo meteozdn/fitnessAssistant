@@ -7,37 +7,23 @@
 
 import Foundation
 
-// MARK: - Category
-struct MainCategories: Codable {
+
+// MARK: - MainCategory
+struct Category: Codable {
     let id: Int?
     let exerciseName: String?
     let mainCategory: Int?
-    let subCategories: [MainCategories]?
+    let categoriesDescription: String?
+    let subCategories: [Category]?
 
     enum CodingKeys: String, CodingKey {
         case id
         case exerciseName = "exercise_name"
         case mainCategory = "main_category"
+        case categoriesDescription = "categories_description"
         case subCategories = "sub_categories"
     }
 }
 
-typealias Categories = [MainCategories]
+typealias MainCategories = [Category]
 
-
-
-
-// MARK: - MainCategory
-struct MainCategory: Codable {
-    let id: Int?
-    let exerciseName: String?
-    let mainCategory: Int?
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case exerciseName = "exercise_name"
-        case mainCategory = "main_category"
-    }
-}
-
-typealias MainCategories = [MainCategory]

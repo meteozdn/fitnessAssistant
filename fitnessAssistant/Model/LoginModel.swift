@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct LoginModel:Codable{
+    let success: Bool?
+    let id: Int?
+    let message: String?
+}

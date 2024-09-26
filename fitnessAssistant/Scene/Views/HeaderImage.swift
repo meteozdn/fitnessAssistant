@@ -1,5 +1,13 @@
+//
+//  HeaderImage.swift
+//  fitnessAssistant
+//
+//  Created by Metehan Özden on 22.09.2024.
+//
 
-class HeaderImage: UIView{
+
+import UIKit
+class HeaderImageView: UIView{
     
     let baseImagePath = "fitnessBanner"
     
@@ -21,7 +29,7 @@ class HeaderImage: UIView{
         
         self.heroImageView = UIImageView()
         self.heroImageView.image =  UIImage(named: "fitnessBanner1")
-        self.heroImageView.contentMode = .scaleAspectFill
+        self.heroImageView.contentMode = .center
         addSubview(self.heroImageView)
         self.heroImageView.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -31,7 +39,7 @@ class HeaderImage: UIView{
         roundBottomCorners(radius: 120)
     }
     
-   private func roundBottomCorners(radius: CGFloat) {
+   func roundBottomCorners(radius: CGFloat) {
         let maskPath = UIBezierPath(roundedRect: bounds,byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: radius, height: radius))
         let shape = CAShapeLayer()
         shape.path = maskPath.cgPath

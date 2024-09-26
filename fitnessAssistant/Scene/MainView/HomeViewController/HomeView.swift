@@ -12,11 +12,10 @@ class HomeViewController:UIViewController, UICollectionViewDelegate  {
     //MARK: -Variables
     private var topCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
     private var bottomCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
-
+    private var muscles = [Category]()
     private let days = ["Pzt", "Sal", "Çrş", "Prş", "Cum", "Cmt", "Pzr"]
-    private let categories = ["OMUZ":"shoulder", "GÖĞÜS":"chest", "SIRT":"back", "KOL" :"arms", "BACAK":"leg", "KARIN":"abs"]
+    private let imagesPath = [ "chest","shoulder","arms", "back", "leg", "butt", "abs"]
    //TODO: Modelle(Dynamic)
-
     var viewModel: HomeViewModel?
     private let scrollView: UIScrollView = {
         let sv = UIScrollView()
@@ -44,13 +43,13 @@ class HomeViewController:UIViewController, UICollectionViewDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel?.delegate = self
-        viewModel?.load()
-
         setUI()
+        viewModel?.getMuscleCategories()
+
     }
     
     @objc func goToProfile(){
-        print("aaa")
+        print("goToProfile")
     }
     
     
@@ -60,15 +59,18 @@ class HomeViewController:UIViewController, UICollectionViewDelegate  {
         let topLayout = UICollectionViewFlowLayout()
         topLayout.scrollDirection = .horizontal
         topLayout.itemSize = CGSize(width: screenWidth / 8.5, height: 70)
+        topLayout.minimumLineSpacing = 5
+
         topCollectionView = UICollectionView(frame: .zero, collectionViewLayout: topLayout)
         topCollectionView.tag = 1
         topCollectionView.delegate = self
         topCollectionView.dataSource = self
         topCollectionView.register(StreakCollectionViewViewCell.self, forCellWithReuseIdentifier: StreakCollectionViewViewCell.identifier)
-        
+        topCollectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+      
         //Exercises
         let bottomLayout = UICollectionViewFlowLayout()
-        bottomLayout.itemSize = CGSize(width: screenWidth / 4, height: screenWidth / 2 )
+        bottomLayout.itemSize = CGSize(width: screenWidth * 0.27, height: screenWidth * 0.6)
         bottomCollectionView = UICollectionView(frame: .zero, collectionViewLayout: bottomLayout)
         bottomCollectionView.tag = 2
         bottomCollectionView.delegate = self
@@ -105,7 +107,7 @@ extension HomeViewController: UICollectionViewDataSource{
         if collectionView.tag == 1 {
             return days.count
         }else {
-            return 6
+            return muscles.count
         }
     }
     
@@ -117,12 +119,11 @@ extension HomeViewController: UICollectionViewDataSource{
             return cell
 
         }else{
-            let sortedCategory = categories.map { $0 }
-            let category = sortedCategory[indexPath.row]
-            let name = category.key
-            let image = category.value
+
+            let name = muscles[indexPath.row].exerciseName
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReadyCategoryCollectionViewCell.identifier, for: indexPath) as! ReadyCategoryCollectionViewCell
-            cell.setupCell(title: name, image: image)
+            let image = imagesPath[indexPath.row]
+            cell.setupCell(title: name!, image: image)
             cell.layoutIfNeeded()
             cell.layer.cornerRadius = 15
             cell.layer.masksToBounds = true
@@ -133,14 +134,15 @@ extension HomeViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if collectionView.tag == 2{
-            let sortedCategory = categories.map { $0 }
-            let category = sortedCategory[indexPath.row]
-            let name = category.key
-            let image = category.value
+            let name = muscles[indexPath.row].exerciseName!
+            let image = imagesPath[indexPath.row]
+            let descriptions = muscles[indexPath.row].categoriesDescription
+            let muscles = muscles[indexPath.row].subCategories
+            print("subss----------\(muscles))")
             let rootVC = MuscleDetailViewController()
             rootVC.title = name
             let navVC = UINavigationController(rootViewController: rootVC)
-            rootVC.setComponensts(image)
+            rootVC.setComponensts(image: image, description: descriptions ?? "No desc", muscles: muscles ?? [])
             present(navVC,animated: true)
         }
     }
@@ -233,8 +235,22 @@ extension HomeViewController{
 }
 
 
+
 extension HomeViewController: HomeViewModelDelegate{
-    func handle(_ output: String) {
+    func handle(_ output: MuscleOutput) {
+        switch output {
+        case .muscle(let categories):
+            muscles = categories
+            
+            DispatchQueue.main.async {
+                self.bottomCollectionView.reloadData()
+            }
+            return
+        case .error(let e):
+            print(e)
+            return
+        }
+        
     }
 }
 

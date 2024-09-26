@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+class TrainViewModelBuilder{
+    
+   static func make() -> TrainingViewController {
+        let vc = TrainingViewController()
+        let viewModel = TrainViewModel(service: NetworkCaller())
+        vc.viewModel = viewModel
+        return vc
+    }
+
+}

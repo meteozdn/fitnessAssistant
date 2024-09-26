@@ -15,6 +15,7 @@ class CustomTextField: UITextField {
         case password
         case name
         case surname
+        case search
     }
     
     private let authType: CustomTextFieldType
@@ -45,6 +46,22 @@ class CustomTextField: UITextField {
             self.placeholder = "İsim"
         case .surname:
             self.placeholder = "Soyisim"
+        case .search:
+            self.placeholder = "Ara"
+            self.clearButtonMode = .whileEditing
+            self.returnKeyType = .search
+            let searchIcon = UIImageView(image: UIImage(systemName: "magnifyingglass"))
+            searchIcon.contentMode = .scaleAspectFit
+            searchIcon.tintColor = .gray
+            let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 20))
+            searchIcon.frame = CGRect(x: 5, y: 0, width: 20, height: 20)
+            paddingView.addSubview(searchIcon)
+            self.rightView = paddingView
+            self.rightViewMode = .always
+
+
+            
+            
         }
     }
     

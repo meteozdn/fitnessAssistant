@@ -9,6 +9,8 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
+    var viewModel: RegisterViewModel?
+
     let authHeader = AuthHeaderView(title: "Hoşgeldin", subtitle: "Kayıt olmak için bilgilerini gir")
     let emailField = CustomTextField(authType: .email)
     let passwordField = CustomTextField(authType: .password)
@@ -88,10 +90,13 @@ class RegisterViewController: UIViewController {
     
     @objc private func goToSignIn(){
         self.dismiss(animated: true, completion: nil)
-        print("girişYap")
 
     }
     @objc private func signUp(){
+        if let name = nameField.text, let surname = surnameField.text, let mail = emailField.text, let password = passwordField.text {
+            viewModel?.register(name: name, surname: surname, mail: mail, password: password)
+        }
+        
         print("kayıtOl")
         
     }

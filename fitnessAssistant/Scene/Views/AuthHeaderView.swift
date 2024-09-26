@@ -36,7 +36,6 @@ class AuthHeaderView: UIView {
         return label
     }()
     
-    
     init(title: String, subtitle: String) {
         super.init(frame: .zero)
         self.titleLabel.text = title
@@ -69,8 +68,6 @@ class AuthHeaderView: UIView {
             make.top.equalTo(titleLabel.snp.bottom).offset(10)
             make.centerX.equalToSuperview()
         }
-        
-        
     }
     
     

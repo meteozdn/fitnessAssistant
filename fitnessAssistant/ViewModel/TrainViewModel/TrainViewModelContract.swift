@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+protocol TrainViewModelProtocol{
+    var delegate: TrainViewModelDelegate? {get set}
+    func getDailyExercise()
+}
+
+
+protocol TrainViewModelDelegate{
+    func handle(_ output: String)
+}

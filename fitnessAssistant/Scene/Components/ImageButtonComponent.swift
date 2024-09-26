@@ -9,12 +9,12 @@ import Foundation
 import UIKit
 
 
-extension HomeViewController{
+extension TrainingViewController{
     
     func buttonWithImage(image: UIImage, text: String) -> UIButton? {
         let text = "\(text.capitalized)"
         let textColor = UIColor.white
-        let textFont = UIFont.systemFont(ofSize: 60, weight: .bold)
+        let textFont = UIFont.systemFont(ofSize: 30, weight: .bold)
         let scale = UIScreen.main.scale
         UIGraphicsBeginImageContextWithOptions(image.size, false, scale)
         
@@ -46,7 +46,7 @@ extension HomeViewController{
         
         imageButton.setImage(buttonImage, for: .normal)
         imageButton.layer.cornerRadius = 20
-        imageButton.imageView?.contentMode = .scaleAspectFill
+        imageButton.imageView?.contentMode = .center
         
         imageButton.layer.masksToBounds = true
 

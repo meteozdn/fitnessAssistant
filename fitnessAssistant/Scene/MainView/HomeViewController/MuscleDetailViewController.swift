@@ -7,10 +7,14 @@
 
 import UIKit
 
-class MuscleDetailViewController: UIViewController {
-    
+class MuscleDetailViewController: UIViewController, UICollectionViewDelegate {
 
+    
+    
     private var imageView = UIImageView()
+    private var descriptionLabel = UILabel()
+    private var subMusclesCV = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+    private var muscles: [Category] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -27,49 +31,59 @@ class MuscleDetailViewController: UIViewController {
         view.addSubview(imageView)
         imageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(70)
-            make.height.width.equalTo(300)
+            make.width.equalTo(300)
+            make.height.equalTo(200)
             make.centerX.equalToSuperview()
         }
-    }
-    
-    func setComponensts(_ image : String){
-        imageView.image = UIImage(named: image)
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: screenWidth * 0.27, height: screenWidth * 0.6)
+        subMusclesCV = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        subMusclesCV.delegate = self
+        subMusclesCV.dataSource = self
+        subMusclesCV.register(TagCollectionViewCell.self, forCellWithReuseIdentifier: TagCollectionViewCell.identifier)
+        view.addSubview(subMusclesCV)
+        subMusclesCV.snp.makeConstraints { make in
+            make.left.right.equalTo(imageView)
+            make.top.equalTo(imageView.snp.bottom)
+            make.height.equalTo(100)
+        }
+        
+        view.addSubview(descriptionLabel)
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.snp.makeConstraints { make in
+            make.left.right.equalTo(imageView)
+            make.top.equalTo(subMusclesCV.snp.bottom).offset(20)
+        }
+
+
         
     }
     
-     @objc private func addList(){
-         guard let url = URL(string: "https://oguzhanatlan.online/api/post.php?api_key=key123&action=user_add")else{return}
-         var request = URLRequest(url: url)
-         request.httpMethod = "POST"
-         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-         let body:[String: Any] = [
-                 "name":"kenan",
-                 "surname":"birkan",
-                 "username":"kenobirko",
-                 "eposta":"kenobirko@gmail.com",
-                 "password":"ramizsiken19",
-                 "gender":1,
-              ]
-    
-         request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
-         let task = URLSession.shared.dataTask(with: request){ data , _, error in
-             guard let data = data, error == nil else{
-                 return
-             }
-              
-             do {
-                 let response = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                 print(response)
-             }catch{
-                 print(error)
-             }
-                
-         }
-         task.resume()
-         
-         
+    func setComponensts( image : String, description: String, muscles: [Category]){
+        imageView.image = UIImage(named: image)
+        descriptionLabel.text = description
+        DispatchQueue.main.async {
+            self.muscles = muscles
+            self.subMusclesCV.reloadData()
+        }
     }
     
+    @objc private func addList(){
+        print("add")
+    }
 
 }
 
+extension MuscleDetailViewController: UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        muscles.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TagCollectionViewCell.identifier, for: indexPath) as! TagCollectionViewCell
+        cell.configure(with: muscles[indexPath.row].exerciseName ?? "")
+        print("aaa")
+        return cell
+    }
+}

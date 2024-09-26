@@ -17,7 +17,10 @@ struct K {
         static let purple = UIColor(named: "ProjectPurpleColor")
         static let orange = UIColor(named: "ProjectOrangeColor")
         static let gray = UIColor(named: "ProjectSmokeGray")
-
+        static let darkGray = UIColor(named: "ProjectDarkGray")
+    }
+    
+    struct UserInfo {        
     }
     
 }

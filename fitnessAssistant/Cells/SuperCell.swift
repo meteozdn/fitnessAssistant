@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol SuperCell: AnyObject {
+    static var identifier: String {get}
+}

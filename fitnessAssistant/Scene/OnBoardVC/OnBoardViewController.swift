@@ -13,7 +13,7 @@ class OnBoardViewController: UIViewController {
     var nextButton: UIButton = UIButton()
     var backButton: UIButton = UIButton()
     var pageController =  UIPageControl()
-    var headerView : OnBoardingPageImage?
+    var headerView : HeaderImageView?
     let descriptions = ["The application is designed to bring routine sports activities to a new level. You will be able to try exercises that are aimed at strengthening and stretching the body and choose what will bring you the most pleasure. We took care of visual charts so you can track and work on your progress.",
     "We combined bright colors, minimalistic design and clean photos. This was the key to a fresh and friendly design of the fitness app.","Before starting with the programmatic approach let's first try to understand why we need it in the first place, as the same can be achieved using storyboards as well"
     ]
@@ -36,7 +36,7 @@ class OnBoardViewController: UIViewController {
         view.backgroundColor = .white
         
         //Header
-        headerView = OnBoardingPageImage(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeigh * 0.50))
+        headerView = HeaderImageView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeigh * 0.50))
         if let headerView = headerView {
             view.addSubview(headerView)
             headerView.snp.makeConstraints { make in
@@ -130,59 +130,4 @@ class OnBoardViewController: UIViewController {
     
     
 }
-
-
-
-class OnBoardingPageImage: UIView{
-    
-    let baseImagePath = "fitnessBanner"
-    
-    var heroImageView: UIImageView = {
-        let object = UIImageView()
-       return UIImageView()
-    }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        createView()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func createView(){
-        
-        self.heroImageView = UIImageView()
-        self.heroImageView.image =  UIImage(named: "fitnessBanner1")
-        self.heroImageView.contentMode = .scaleAspectFill
-        addSubview(self.heroImageView)
-        self.heroImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.left.right.equalToSuperview()
-            make.height.equalTo(screenHeigh * 0.50)
-        }
-        roundBottomCorners(radius: 120)
-    }
-    
-   private func roundBottomCorners(radius: CGFloat) {
-        let maskPath = UIBezierPath(roundedRect: bounds,byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: radius, height: radius))
-        let shape = CAShapeLayer()
-        shape.path = maskPath.cgPath
-        layer.mask = shape
-    }
-    
-    
-    func changeImage(_ index: Int)  {
-        heroImageView.image = UIImage(named: "\(baseImagePath)\(index + 1)")
-    }
-
-}
-
-
-
-
-
-
-
 

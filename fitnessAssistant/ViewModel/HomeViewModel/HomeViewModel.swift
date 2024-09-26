@@ -8,6 +8,8 @@
 import Foundation
 
 class HomeViewModel: HomeViewModelProtocol{
+
+    
     var delegate: HomeViewModelDelegate?
     let service: NetworkServiceProtocol
     
@@ -15,15 +17,18 @@ class HomeViewModel: HomeViewModelProtocol{
         self.service = service
     }
     
-    func load() {
-        service.fetchData(.exercises) { (result: Result<ExerciseModel, Error>) in
+    func getMuscleCategories() {
+        
+        service.request(.allCategories, withBody: nil, withID: nil) { (result: Result<MainCategories, Error>) in
+           // print(result)
             switch result{
-            case.success:
-               print("success")
+            case.success(let category):
+                self.delegate?.handle(.muscle(category))
             case.failure:
                 print("fail")
             }
         }
+        
     }
     
 }

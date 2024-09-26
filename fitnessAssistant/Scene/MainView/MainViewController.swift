@@ -17,10 +17,10 @@ class MainViewController: UITabBarController {
     
     private func createTabbar()  {
         let vcFirst = createNav(image: "house", title: "Home", vc: HomeViewModelBuilder.make())
-        let vcSecond = createNav(image: "figure.run", title: "Train", vc: TrainingViewController())
+        let vcSecond = createNav(image: "figure.run", title: "Train", vc: TrainViewModelBuilder.make())
         let vcThird = createNav(image: "chart.bar", title: "Activity", vc: ActivityViewController())
         let vcFourth = createNav(image: "person", title: "Profile", vc: ProfileViewController())
-  
+        tabBar.backgroundColor = .white
         self.tabBar.tintColor = UIColor(named: "ProjectRedColor")
         setViewControllers([vcFirst,vcSecond, vcFirst, vcThird, vcFourth], animated: true)
     }

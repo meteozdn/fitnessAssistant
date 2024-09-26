@@ -9,12 +9,16 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    
+    var viewModel: LoginViewModel?
     let authHeader = AuthHeaderView(title: "Hoşgeldin", subtitle: "Giriş yapmak için bilgilerini gir")
     let emailField = CustomTextField(authType: .email)
     let passwordField = CustomTextField(authType: .password)
+    var loginModel: LoginModel = LoginModel(success: nil, id: nil, message: nil)
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel?.delegate = self
         setupUI()
     }
     
@@ -80,16 +84,44 @@ class LoginViewController: UIViewController {
 
     }
     @objc private func goToSignUp(){
-        let registerVC = RegisterViewController()
+        let registerVC = RegisterViewModelBuilder.make()
         let navController = UINavigationController(rootViewController: registerVC)
         self.present(navController, animated: true)
         print("SIGNUP")
         
     }
     @objc private func signIn(){
-        print("signIn")
-
+        if let mail = emailField.text, let password = passwordField.text {
+            viewModel?.login(mail: mail, password: password)
+        }
     }
 
 
+}
+
+
+extension LoginViewController: LoginViewModelDelegate{
+    func handle(_ output: LoginViewOutput) {
+        switch output {
+        case .loginModel(let model):
+            loginModel = model
+            DispatchQueue.main.async {
+                if let id = self.loginModel.id {
+                    if id > 0 {
+                        let initVC = MainViewController()
+                        initVC.modalPresentationStyle = .fullScreen
+                        let navController = UINavigationController(rootViewController: initVC)
+                        navController.modalPresentationStyle = .fullScreen
+                        navController.navigationBar.isHidden = true
+                        self.present(navController, animated: true)
+                    }
+                }
+            }
+
+        case .error(let error):
+            printContent(error)
+        }
+    }
+    
+    
 }

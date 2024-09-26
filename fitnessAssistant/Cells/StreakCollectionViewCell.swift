@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StreakCollectionViewViewCell: UICollectionViewCell {
+class StreakCollectionViewViewCell: UICollectionViewCell, SuperCell {
     
     static let identifier = "StreakCollectionViewCell"
     
@@ -24,6 +24,9 @@ class StreakCollectionViewViewCell: UICollectionViewCell {
     }
 
     private func createCell(){
+        contentView.backgroundColor = K.ColorConst.gray
+        contentView.layer.cornerRadius = 12
+        contentView.clipsToBounds = true
         contentView.addSubview(label)
         dot.text = "."
         dot.textAlignment = .center

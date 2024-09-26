@@ -13,6 +13,11 @@ protocol LoginViewModelProtocol{
 }
 
 
+enum LoginViewOutput {
+    case loginModel(LoginModel)
+    case error(Error)
+}
+
 protocol LoginViewModelDelegate{
-    func handle(_ output: String)
+    func handle(_ output: LoginViewOutput)
 }

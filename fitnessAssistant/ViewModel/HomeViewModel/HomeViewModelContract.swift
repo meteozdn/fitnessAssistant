@@ -10,11 +10,14 @@ import Foundation
 
 protocol HomeViewModelProtocol{
     var delegate: HomeViewModelDelegate? {get set}
-    func load()
-    
+    func getMuscleCategories()
 }
 
+enum MuscleOutput {
+    case muscle(MainCategories)
+    case error(Error)
+}
 
 protocol HomeViewModelDelegate{
-    func handle(_ output: String)
+    func handle(_ output: MuscleOutput)
 }
