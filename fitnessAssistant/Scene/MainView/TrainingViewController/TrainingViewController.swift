@@ -8,14 +8,15 @@
 import UIKit
 
 class TrainingViewController: UIViewController {
-
+    
     private var topCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
     private let categories = ["OMUZ":"shoulder", "GÖĞÜS":"chest", "SIRT":"back", "KOL" :"arms", "BACAK":"leg", "KARIN":"abs"]
     private var collectionsCV = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+    private var places = [Place(name: "Ev", image: "house.fill"),Place(name: "Salon", image: "dumbbell.fill"),Place(name: "Dışarı", image: "tree.fill")]
     private var placeCV = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
     var viewModel: TrainViewModel?
-
-
+    
+    
     
     private let scrollView: UIScrollView = {
         let sv = UIScrollView()
@@ -23,7 +24,7 @@ class TrainingViewController: UIViewController {
         return sv
     }()
     
-
+    
     private let contentView: UIView = {
         let sv = UIView()
         sv.backgroundColor = .white
@@ -34,22 +35,24 @@ class TrainingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = K.ColorConst.gray
+        self.navigationController?.navigationBar.tintColor = UIColor.red
+        
         setUI()
         scrollView.contentSize = contentView.frame.size
-
+        
     }
     
     private func setUI(){
         
-
-       
+        
+        
         self.navigationItem.title = "Antrenman"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addNewCollection))
         navigationItem.rightBarButtonItem?.tintColor = .projectRed
         
         setScrollView()
         
-
+        
         
         let searchTextField = CustomTextField(authType: .search)
         contentView.addSubview(searchTextField)
@@ -57,7 +60,7 @@ class TrainingViewController: UIViewController {
             make.width.equalTo(screenWidth * 0.9)
             make.height.equalTo(screenWidth * 0.1)
             make.top.equalToSuperview().offset(100)
-
+            
             make.centerX.equalToSuperview()
         }
         
@@ -103,14 +106,14 @@ class TrainingViewController: UIViewController {
         placeCVLayout.itemSize = CGSize(width: screenWidth * 0.28, height: screenWidth * 0.28)
         placeCVLayout.minimumLineSpacing = 11
         placeCV = setCollectionView(layout: placeCVLayout, tag: 2, cell: PlaceCollectionViewCell.self)
-       
+        
         placeCV.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             make.height.equalTo(screenWidth * 0.3)
             make.top.equalTo(placeLabel.snp.bottom).offset(10)
         }
-
-
+        
+        
         let readyCategoryLabel = generateTitle("Hazır Kategoriler")
         contentView.addSubview(placeLabel)
         readyCategoryLabel.snp.makeConstraints { make in
@@ -129,9 +132,9 @@ class TrainingViewController: UIViewController {
         }
         
         contentView.snp.makeConstraints { make in
-             make.bottom.equalTo(collectionsCV.snp.bottom).offset(50)
-         }
-
+            make.bottom.equalTo(collectionsCV.snp.bottom).offset(50)
+        }
+        
     }
     
     private func generateTitle(_ title: String)-> UILabel{
@@ -169,20 +172,17 @@ class TrainingViewController: UIViewController {
         contentView.addSubview(cv)
         return cv
     }
-
+    
     
     @objc private func addNewCollection(){
-       // print("add new collection")
-       // viewModel?.getDailyExercise()
-       // navigationController?.pushViewController(ExerciseViewModelBuilder.make(), animated: true)
-        //let initVC = ExercisesViewController()
-        //initVC.modalPresentationStyle = .fullScreen
-        //let navController = UINavigationController(rootViewController: initVC)
-        //navController.modalPresentationStyle = .fullScreen
-        //navController.navigationBar.isHidden = true
-        //self.present(navController, animated: true)
+        let alert = UIAlertController(title: "Yeni Koleksiyon", message: "Kolleksiyon Eklensin mi", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Kolleksiyon Ekle", style: .default) { (action) in
+            print("success")
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
-
+    
 }
 
 
@@ -191,8 +191,9 @@ extension TrainingViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.allowsSelection = true
         //viewModel?.getDailyExercise()
-        navigationController?.pushViewController(ExerciseViewModelBuilder.make(id: indexPath.row + 1), animated: true)
-        print(indexPath.row)
+        if collectionView.tag == 1 {
+            navigationController?.pushViewController(ExerciseViewModelBuilder.make(id: indexPath.row ), animated: true)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -209,6 +210,7 @@ extension TrainingViewController: UICollectionViewDataSource, UICollectionViewDe
             cell.layoutIfNeeded()
             cell.layer.cornerRadius = 15
             cell.layer.masksToBounds = true
+            cell.configure(place: places[indexPath.row])
             return cell
         }else{
             let sortedCategory = categories.map { $0 }
@@ -226,3 +228,4 @@ extension TrainingViewController: UICollectionViewDataSource, UICollectionViewDe
     
     
 }
+

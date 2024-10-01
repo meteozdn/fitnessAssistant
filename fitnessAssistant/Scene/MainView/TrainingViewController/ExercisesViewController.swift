@@ -27,6 +27,7 @@ class ExercisesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backBarButtonItem?.tintColor = K.ColorConst.red
         view.backgroundColor = .white
         exercisesTableView.dataSource = self
         setUI()
@@ -35,7 +36,6 @@ class ExercisesViewController: UIViewController {
     
     func setUI(){
         viewModel?.delegate = self
-        viewModel?.getExercise(5)
         self.headerView.image =  UIImage(named: "fitnessBanner2")
         view.addSubview(self.headerView)
         self.headerView.snp.makeConstraints { make in
@@ -121,7 +121,10 @@ extension ExercisesViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ExercisesTableViewCell.identifier, for: indexPath) as! ExercisesTableViewCell
-        cell.configure(exercises[indexPath.row].exerciseName ?? "")
+
+        //if indexPath.row < exercises.count {
+            cell.configure(exercises[indexPath.row].exerciseName ?? "")
+        //}
         return cell
 
     }
@@ -134,6 +137,7 @@ extension ExercisesViewController: ExerciseViewModelDelegate{
     func handle(_ output: ExerciseModelOutput) {
         switch output {
         case .exercises(let e):
+            print("asdfss")
             exercises = e
             
             DispatchQueue.main.async {

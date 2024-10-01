@@ -40,38 +40,6 @@ final class NetworkCaller: NetworkServiceProtocol{
         task.resume()
     }
     
-    /*
-    func request(withBody body: [String: Any]? = nil) -> URLRequest {
-        guard let apiUrl = URLComponents(string: fitnessAppURL()) else {
-            fatalError("URL COMPONENT OLUŞTURULAMADI")
-        }
-
-        guard let url = apiUrl.url else {
-            fatalError("API URL OLUŞTURULMADI")
-        }
-
-        var request = URLRequest(url: url)
-        request.httpMethod = method.rawValue
-        
-        if let body = body {
-            do {
-                // JSON formatına çeviriyoruz
-                let jsonData = try JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
-                request.httpBody = jsonData
-                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            } catch {
-                print("JSON oluşturulamadı: \(error)")
-            }
-        }
-
-        return request
-    }
-     */
-    
-    
-  
-    
-    
     
     
 }

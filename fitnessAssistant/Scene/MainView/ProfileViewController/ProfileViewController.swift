@@ -10,7 +10,7 @@ import SnapKit
 class ProfileViewController: UIViewController {
     
     
-    let profileHeader = ProfilePhotoView(title: "Kenan Birkan")
+    let profileHeader = ProfilePhotoView(title: "Kenan")
     private var optionsButtonsTableView = UITableView(frame: .zero)
     weak var sharedPreferences = SharedPreferenceManager.instance
     //let image

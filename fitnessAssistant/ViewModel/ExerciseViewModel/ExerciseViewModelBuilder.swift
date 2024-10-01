@@ -11,7 +11,7 @@ class ExerciseViewModelBuilder{
         let vc = ExercisesViewController()
         let viewModel = ExerciseViewModel(service: NetworkCaller())
         vc.viewModel = viewModel
-        vc.viewModel?.getExercise(id)
+        vc.viewModel?.getExercise(id + 1)
         return vc
     }
 

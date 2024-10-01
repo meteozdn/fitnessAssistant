@@ -18,7 +18,7 @@ class TrainViewModel: TrainViewModelProtocol{
 
     func getDailyExercise() {
         service.request(.allCategories, withBody: nil, withID: nil) { (result: Result<MainCategories, Error>) in
-            print(result)
+            //print(result)
             switch result{
             case.success:
                print("success")

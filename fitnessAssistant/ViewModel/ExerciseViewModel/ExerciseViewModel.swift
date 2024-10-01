@@ -18,7 +18,6 @@ class ExerciseViewModel: ExerciseViewModelProtocol{
     
     func getExercise(_ id: Int) {
         service.request(.exercise, withBody: nil, withID: id) { (result: Result<Exercises, Error>) in
-            print(result)
             switch result{
             case.success(let exercises):
                 self.delegate?.handle(.exercises(exercises))

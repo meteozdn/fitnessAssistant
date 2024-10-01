@@ -51,4 +51,17 @@ class PlaceCollectionViewCell: UICollectionViewCell, SuperCell {
             }
 
     }
+    func configure(place: Place){
+        label.text = place.name
+        imageView.image = UIImage(systemName: place.image)
+    }
+}
+
+struct Place {
+    let name: String
+    let image: String
+    init(name: String, image: String) {
+        self.name = name
+        self.image = image
+    }
 }

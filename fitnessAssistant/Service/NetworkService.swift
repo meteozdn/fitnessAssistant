@@ -84,7 +84,6 @@ extension Endpoint: EndpointProtocol{
     func fitnessAppURL(_ withID: Int? = nil) -> String {
         
         if let id = withID {
-            print("\(baseURL)\(apiKey)\(path)\(id)/")
             return "\(baseURL)\(apiKey)\(path)\(id)/"
         }else{
             return "\(baseURL)\(apiKey)\(path)"
@@ -92,13 +91,13 @@ extension Endpoint: EndpointProtocol{
     }
  
     func request(withBody body: [String: Any]? = nil, withID: Int? = nil) -> URLRequest {
-        print(fitnessAppURL())
         var url = ""
         if let id = withID {
             url = fitnessAppURL(id)
         }else{
             url = fitnessAppURL()
         }
+        print(url)
         guard let apiUrl = URLComponents(string: url)
         else {fatalError("URL COMPONENT OLUŞTURULAMADI") }
         
