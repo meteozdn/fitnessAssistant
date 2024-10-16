@@ -61,7 +61,7 @@ extension Endpoint: EndpointProtocol{
     }
     
     var apiKey: String {
-        return "api/key123/"
+        return "apikey"
     }
    // &table=exercises&category=1
     var method: HttpMethods {
